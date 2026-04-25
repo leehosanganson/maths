@@ -1,0 +1,56 @@
+% --- 1. Essential Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm} % The Holy Trinity of math typesetting
+\usepackage{mathtools}                % Provides \coloneqq for definition (:=)
+\usepackage{enumitem}                 % Better lists (e.g., (a), (b), (c))
+\usepackage{geometry}                 % Easily adjust page margins
+\geometry{margin=1in}
+
+% --- 2. Number Sets ---
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+% --- 3. Real Analysis Variables ---
+% \varepsilon looks much better and is the standard over \epsilon
+\newcommand{\eps}{\varepsilon}
+\newcommand{\del}{\delta}
+
+% --- 4. Auto-sizing Brackets ---
+% These automatically resize to fit whatever fraction or term is inside them
+\newcommand{\set}[1]{\left\{ #1 \right\}}  % \set{x \in \R \mid x > 0}
+\newcommand{\abs}[1]{\left| #1 \right|}    % \abs{x - y} < \eps
+\newcommand{\norm}[1]{\left\| #1 \right\|} % \norm{f}
+
+% --- 5. Math Operators ---
+% Proper spacing for functions (e.g., \sup, \inf are built-in, but these are not)
+\DeclareMathOperator{\cl}{cl}       % Closure
+\DeclareMathOperator{\interior}{int} % Interior (note: \int is already integral!)
+\DeclareMathOperator{\bd}{bd}       % Boundary
+\DeclareMathOperator{\diam}{diam}   % Diameter
+\DeclareMathOperator{\dom}{dom}     % Domain
+
+% --- 6. Document Formatting ---
+% Stop indenting new paragraphs and add a little space between them
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8em}
+
+% --- 7. Environments (Notes & Theorems) ---
+\theoremstyle{definition} % Bold title, normal text body
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{problem}{Problem}
+
+\theoremstyle{plain} % Bold title, italicized text body (for formal logic)
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+% --- 8. Problem Set Specifics ---
+% A custom "Solution" environment that puts a nice QED box at the end
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\end{proof}}

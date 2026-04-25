@@ -1,0 +1,21 @@
+# These are generated continuously by latexmk and should never be tracked.
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.pdfsync
+*.xdv
+
+# Output
+*.pdf
+*.dvi
+
+# Nix
+.direnv/
