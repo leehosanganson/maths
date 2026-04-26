@@ -15,7 +15,9 @@
       ];
 
       forAllSystems = f: nixpkgs.lib.genAttrs allSystems (system: f {
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = import nixpkgs {
+          inherit system;
+        };
       });
     in
     {
@@ -23,7 +25,7 @@
         default = pkgs.mkShell {
           packages = with pkgs; [
             texlive.combined.scheme-full # Provides all standard math packages (amsmath, amsfonts, etc.)
-            zathura # The PDF viewer you configured
+            # zathura # The PDF viewer you configured
           ];
         };
       });
